@@ -1,0 +1,36 @@
+{% extends 'shop/base.html' %}
+<div class="container">
+    <div class="col-md-4">
+        <div class="row">
+            Image Here
+        </div>
+    </div>
+
+    <div class="col-md-8">
+
+{% block body %}
+        {% for products in products.all %}
+        {% load staticfiles %}
+
+<div class="container carousel-inner no-padding">
+    <div class="carousel-item-active"></div>
+      <div class="col-xs-3 col-sm-3 col-md-3">
+          <img class="card-img-top" src="{% static 'rado.jpg '%}">
+          <button class="btn btn-primary mx-3" href="">Buy Now</button>
+            <div class="row">
+
+
+            </div>
+            <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+{%endblock%}
+
+
+
+
+

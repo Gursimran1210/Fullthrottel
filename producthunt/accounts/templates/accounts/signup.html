@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div style="color: chocolate"><h3>Sign up</h3></div>
+<form method="POST" action="/accounts/signup/">
+{% csrf_token %}
+<h5>{{error}}</h5><br>
+
+
+<b>Username</b>: <br><input type="text" name='username'><br><br>
+<b>Password</b>: <br><input type="password" name="password1"><br><br>
+<b>Re-type Password</b>:<br> <input type="password" name="password2"><br><br>
+<b>Email</b>: <br><br> <input type="text" name="Email"><br><br>
+<b>What you like ?</b>: <br><br> <input type="text" name="like"><br><br>
+<input type="submit" value="Sign Up">
+
+</form>
+
+
+{%endblock%}
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="color: chocolate"><h3>Create</h3></div>
+<form method="POST" action="{% url 'create' %}" enctype="muptipart/form-data">
+{% csrf_token %}
+<h5>{{error}}</h5><br>
+
+<br><br>
+<b>Title</b>: <br><input type="text" name='title'><br><br>
+<b>Body</b>: <br><input type="textbox" name="body"><br><br>
+<b>Url</b>: <br><input type="text" name='url'><br><br>
+<b>Icon</b>: <br><input type="file" name='icon'><br><br>
+<b>Image</b>: <br><input type="file" name='image'><br><br>
+<input type="submit" value="UpLoad">
+
+
+
+
+
+</form>
+
+{%endblock%}

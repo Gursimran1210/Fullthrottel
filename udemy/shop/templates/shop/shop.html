@@ -1,0 +1,63 @@
+{% extends 'shop/base.html' %}
+{% block body %}
+  <style>
+    .col-md-3
+    {
+    display: inline-block;
+    margine-left:-4px;
+    }
+
+    .col-md-3 -img{
+    width:100%
+    height:auto;
+    }
+    body .carousel-indicator li{
+    background color:blue;
+    }
+    body .carousel-control-prev-icon,
+    body .carousel-control-next-icon{
+    background-color:red;
+    }
+    body .no-padding{
+    padding-left:0;
+    padding-right:0;
+    }
+
+  </style>
+  <body style="background:light grey;">
+
+{% for product in product.all %}
+  <li class ="carousel-indicators">
+  <li data-target="#demo" data-slide-to="0" class="ative"></li>
+   <li data-target="#demo" data-slide-to="1" ></li>
+  <li data-target="#demo" data-slide-to="2"></li>
+
+<div class="container carousel-inner no-padding">
+    <div class="carousel-item-active"></div>
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <h1 class="card" style="width: 18rem;">
+            <h4 style="color:red;">Flash Sale on {{product.product_name}}</h4>
+            <h5 class="card-title">{{product.product_name}}</h5>
+          <img class="card-img-top" src="{{product.image.url}}"
+            <div class="card-body">
+
+            <p class="card-text">{{product.desc}}</p>
+            <a href="{% url 'productview' %}" class="btn btn-primary">Buy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+{% endfor %}
+
+    <!-- left and right controls for slide -->
+    <a class="carousel-controle-prev" href="#demo" data-slide="prev">
+      <span class="carousel-controle-prev-icon"></span>
+
+     <a class="carousel-controle-next" href="#demo" data-slide="prev">
+      <span class="carousel-controle-next-icon"></span>
+
+    </a>
+      </ul>
+      {%endblock%}
+
